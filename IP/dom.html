@@ -1,0 +1,35 @@
+<html>  
+<head>  
+<title> Dom manipulation </title>  
+</head>  
+<body>
+  <div id="main">
+    <h1 id="title">DOM manipulation</h1>
+    <p id="hint">This is a simple paragraph.</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <p>Paragraph 4</p>
+    <button onclick="addNode()">Add new paragraph</button>
+    <button onclick="querysel()">Use Queryselector</button>
+    <button onclick="queryAll()">Use QuerySelectorAll</button>
+    </div>
+    <script> 
+      function addNode(){
+        var newDiv = document.createElement("div"); 
+        var newContent = document.createTextNode("I am the new paragrph"); 
+        newDiv.appendChild(newContent); 
+        var currentDiv = document.getElementById("main"); 
+        document.body.appendChild(newDiv, currentDiv);
+      }
+
+      function querysel(){
+        document.querySelector("p").style.backgroundColor = "cyan";
+      }
+
+      function queryAll(){
+        var x = document.querySelectorAll("p");
+        x[3].style.backgroundColor = "pink";
+      }
+    </script>
+</body>  
+</html>

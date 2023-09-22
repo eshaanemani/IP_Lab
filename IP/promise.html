@@ -1,0 +1,23 @@
+<html>  
+<head>  
+<title> Promises </title>  
+</head>  
+<body>
+  <button onclick="getdata()">Fetch Data</button>
+  <div class="container"></div>
+  <script>
+    function getdata()
+    {
+      fetch('https://fakestoreapi.com/products/1')
+      .then(
+      // view the  complete content of the response
+      response => response.json())
+      .then(
+      //access the actual data 
+      data => console.log(data));
+    }
+    
+  </script>
+  
+</body>  
+</html> 

@@ -1,0 +1,48 @@
+body {
+    padding-top: 60px;
+ padding-bottom: 40px;
+ background-color: papayawhip;
+}
+
+.fixed-header{
+    width: 100%; 
+    position: fixed; 
+    background: rgb(226, 35, 35); 
+    padding: 10px 0; 
+    color: black; 
+    top: 0; 
+    left: 0;
+}
+
+.tabs{
+    width: 100%; 
+    margin: 0 auto;
+}
+
+nav a{
+    color: black; 
+    text-decoration: none; 
+    padding: 7px 25px; 
+    display: inline-block;
+}
+
+.fixed-footer{
+    width: 100%; 
+    position: fixed; 
+    background: rgb(226, 35, 35); 
+    padding: 10px 0; 
+    color: black; 
+    bottom: 0; 
+    left: 0; 
+    height: 30px; 
+    margin-top: 2px;
+}
+
+div + p{
+    text-align: center;
+}
+
+
+h1 {
+    text-decoration:underline dotted;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sign Up Page</title>
+<link rel="icon" type="image/x-icon" href="Favicon.png">
+<!-- Add Bootstrap CDN link -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-danger fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">EduFre</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center">Welcome to EduFre</h1>
+        <p class="mb-4 text-center"><strong>Sign Up!</strong></p>
+        <form class="row">
+          <div class="col-md-6 offset-md-3">
+              <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label>Have you learned French before?</label>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" id="yes" name="answer" value="Yes">
+                      <label class="form-check-label" for="yes">Yes</label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" id="no" name="answer" value="No">
+                      <label class="form-check-label" for="no">No</label>
+                  </div>
+              </div>
+              <button type="submit" class="btn btn-dark">Submit</button>
+          </div>
+      </form>
+    </div>
+    
+    <div class="fixed-bottom bg-danger py-2 li">
+        <div class="container text-center text-light">
+            Copyright &copy; 2023 Esha Nemani
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

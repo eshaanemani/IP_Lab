@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Creating Fixed Header and Footer with CSS</title>
+</head>
+<body style="padding-top: 60px; padding-bottom: 40px;">
+    <div class="fixed-header" style="width: 100%; position: fixed; background: rgb(226, 35, 35); padding: 10px 0; color: black; top: 0; left: 0;">
+        <div class="container" style="width: 100%; margin: 0 auto;">
+            <nav>
+                <a href="#" style="color: black; text-decoration: none; padding: 7px 25px; display: inline-block;">Home</a>
+                <a href="#" style="color: black; text-decoration: none; padding: 7px 25px; display: inline-block;">About</a>
+                <a href="#" style="color: black; text-decoration: none; padding: 7px 25px; display: inline-block;">Products</a>
+                <a href="#" style="color: black; text-decoration: none; padding: 7px 25px; display: inline-block;">Services</a>
+                <a href="#" style="color: black; text-decoration: none; padding: 7px 25px; display: inline-block;">Contact Us</a>
+            </nav>
+        </div>
+    </div>
+    <div style="text-align: center; padding-top: 30px;">
+        <h1>Welcome to EduFre </h1>
+        <p style=""><b><strong>Sign Up!</strong></b></p>
+    </div>
+    
+   
+    <form action="Contactinfo.html" style="text-align: center; padding-top: 30px;">
+        <label for="name">NAME:</label>
+        <input type="text" id="name">
+
+        <br>
+        <br>
+        <label for="email">EMAIL:</label>
+        <input type="text" id="EMAIL">
+
+        <br>
+        <br>
+        <label for="password" style="padding-left: 35px;">PASSWORD:</label>
+        <input type="password" id="password">
+
+        <br>
+        <br>
+        <p>Have you learned French before?</p>
+        <input type="radio" id="yes" name="answer" value="Yes" >
+        <label for="yes">Yes</label><br>
+        <input type="radio" id="no" name="answer" value="No">
+        <label for="no">No</label><br>
+
+        <br>
+        <button type="submit" value="submit">Submit</button>
+        <button type="submit" value="submit" disabled>Sign in</button>
+        
+
+    </form>   
+    <div class="fixed-footer" style="width: 100%; position: fixed; background: rgb(226, 35, 35); padding: 10px 0; color: black; bottom: 0; left: 0;">
+        <div class="container" style="text-align: center;">Copyright &copy; 2023 Esha Nemani</div>        
+    </div>
+</body>
+</html>

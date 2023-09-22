@@ -1,0 +1,20 @@
+<script>
+  const func = () => {
+    console.log("Simple Arrow function");
+  };
+  func();
+
+  const func2 = (x, y, z) => {
+    console.log("Parametric arrow function with subtraction of 10-20-30");
+    console.log(x - y - z);
+  };
+
+  func2(10, 20, 30);
+
+  const func3 = (x, y, z = 9) => {
+    console.log(`Parametric arrow function with subtraction of 10-20-${z}`);
+    console.log(x - y - z);
+  };
+
+  func3(10, 20);
+</script>

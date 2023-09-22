@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      const largest = (str) => {
+        console.log(Array.from(str));
+        let ar = Array.from(str);
+        console.log(ar);
+        let max = strArr[0];
+        for (let i = 1; i < strArr.length; i++) {
+          if (strArr[i].length > max.length) {
+            max = strArr[i];
+          }
+        }
+        return [max];
+      };
+      var name = prompt("Enter a sentence");
+      console.log(name);
+      console.log(largest(name));
+    </script>
+  </body>
+</html>

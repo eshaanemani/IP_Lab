@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Generator</title>
+  </head>
+  <body>
+    <script>
+      function* generator() {
+        yield 1;
+        yield 2;
+        yield 3;
+      }
+      let obj = generator();
+      console.log(obj.next());
+      console.log(obj.next());
+      console.log(obj.next());
+      console.log(obj.next());
+      
+    </script>
+  </body>
+</html>
