@@ -1,108 +1,112 @@
 import React, { Component } from 'react';
 
-class App extends Component {
+class FormWithValidation extends Component {
   constructor(props) {
     super(props);
     this.state = {
       name: '',
       email: '',
       password: '',
-      confirmPassword: '',
-      agreeTerms: false,
-      submitted: false,
+      errors: {
+        name: '',
+        email: '',
+        password: '',
+      },
     };
   }
 
-  handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-
-    // Handling different input types
-    const newValue = type === 'checkbox' ? checked : value;
-
-    this.setState({
-      [name]: newValue,
-    });
+  handleInputChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.setState({ submitted: true });
-    const { name, email, password, confirmPassword, agreeTerms } = this.state;
+  validateForm = () => {
+    const { name, email, password } = this.state;
+    const errors = {
+      name: '',
+      email: '',
+      password: '',
+    };
 
-    if (name && email && password && confirmPassword && agreeTerms) {
-      // You can perform form submission logic here
-      alert('Sign-up successful!'); // Display a success message
-    } else {
-      alert('Please fill in all required fields and agree to the terms.');
+    let isValid = true;
+
+    if (!name) {
+      errors.name = 'Name is required';
+      isValid = false;
+    }
+
+    if (!email) {
+      errors.email = 'Email is required';
+      isValid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errors.email = 'Invalid email address';
+      isValid = false;
+    }
+
+    if (!password) {
+      errors.password = 'Password is required';
+      isValid = false;
+    } else if (password.length < 6) {
+      errors.password = 'Password must be at least 6 characters';
+      isValid = false;
+    }
+
+    this.setState({ errors });
+    return isValid;
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const isValid = this.validateForm();
+
+    if (isValid) {
+      // Submit the form data or perform an action
+      console.log('Form submitted with data:', this.state);
     }
   };
 
   render() {
-    const { submitted } = this.state;
+    const { name, email, password, errors } = this.state;
+
     return (
       <div>
-        <h1>Sign Up</h1>
+        <h1>Form with Validation</h1>
         <form onSubmit={this.handleSubmit}>
           <div>
             <label>Name:</label>
             <input
               type="text"
               name="name"
-              value={this.state.name}
-              onChange={this.handleChange}
-              required
+              value={name}
+              onChange={this.handleInputChange}
             />
+            <span className="error">{errors.name}</span>
           </div>
           <div>
             <label>Email:</label>
             <input
-              type="email"
+              type="text"
               name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-              required
+              value={email}
+              onChange={this.handleInputChange}
             />
+            <span className="error">{errors.email}</span>
           </div>
           <div>
             <label>Password:</label>
             <input
               type="password"
               name="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-              required
+              value={password}
+              onChange={this.handleInputChange}
             />
+            <span className="error">{errors.password}</span>
           </div>
-          <div>
-            <label>Confirm Password:</label>
-            <input
-              type="password"
-              name="confirmPassword"
-              value={this.state.confirmPassword}
-              onChange={this.handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label>
-              Agree to Terms:
-              <input
-                type="checkbox"
-                name="agreeTerms"
-                checked={this.state.agreeTerms}
-                onChange={this.handleChange}
-                required
-              />
-            </label>
-          </div>
-          <div>
-            <button type="submit">Sign Up</button>
-          </div>
+          <button type="submit">Submit</button>
         </form>
-        {submitted && <p>Form submitted successfully!</p>}
       </div>
     );
   }
 }
 
-export default App;
+export default FormWithValidation;
