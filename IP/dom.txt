@@ -1,0 +1,93 @@
+//create 
+<div id="main">
+<h1 id="title">Hello World!</h1>
+<p id="hint">This is a simple paragraph.</p>
+</div>
+<script> 
+var newDiv = document.createElement("div"); 
+var newContent = document.createTextNode("Hi, how are you 
+doing?"); 
+newDiv.appendChild(newContent); 
+var currentDiv = document.getElementById("main"); 
+document.body.appendChild(newDiv, currentDiv); </script>
+
+
+//get or set contents
+<div id="main">
+<h1 id="title">Hello World!</h1>
+<p id="hint">This is a simple paragraph.</p>
+</div>
+<button type="button" onclick="getContents()">Get Contents</button>
+<button type="button" onclick="setContents()">Set Contents</button>
+<script>
+function getContents() {
+var contents = document.getElementById("main").innerHTML;
+alert(contents); 
+}
+function setContents() {
+var mainDiv = document.getElementById("main");
+mainDiv.innerHTML = "<p>This is <em>newly inserted</em> 
+paragraph.</p>";
+}
+</script>
+
+
+//insert
+<body>
+<div id="main">
+<h1 id="title">Hello World!</h1>
+</div>
+<button type="button" onclick="insertContent()">Insert Content</button>
+<script>
+function insertContent() {
+var mainDiv = document.getElementById("main");
+mainDiv.insertAdjacentHTML('beforebegin', '<p>This is paragraph one.</p>');
+mainDiv.insertAdjacentHTML('afterbegin', '<p>This is paragraph two.</p>');
+mainDiv.insertAdjacentHTML('beforeend', '<p>This is paragraph three.</p>');
+mainDiv.insertAdjacentHTML('afterend', '<p>This is paragraph four.</p>');
+}
+</script>
+
+
+//remove child
+<div id="main">
+<h1 id="title">Hello World!</h1>
+<p id="hint">This is a simple paragraph.</p>
+</div>
+<script> 
+var parentElem = document.getElementById("main"); 
+var childElem = document.getElementById("hint"); 
+parentElem.removeChild(childElem); 
+</script>
+
+
+//replace
+parentNode.replaceChild(newChild, oldChild);
+
+//queryselector
+<body>
+<p>This is a p element.</p>
+<p>This is also a p element.</p>
+<p>One more</p>
+<button onclick="myFunction()">Try it</button>
+<script>
+function myFunction() {
+document.querySelector("p").style.backgroundColor = "red";
+}
+</script>
+
+
+//queryselector all
+<body>
+<p>This is a p element.</p>
+<p>This is also a p element.</p>
+<p>One more</p>
+<button onclick="myFunction()">Try it</button>
+<script>
+function myFunction() {
+var x = document.querySelectorAll("p");
+x[0].style.backgroundColor = "red";
+}
+</script>
+</body>
+
